@@ -1,4 +1,4 @@
-package com.example.admin.mvvmposts.injection
+package com.example.admin.mvvmposts.injection.module
 
 import com.example.admin.mvvmposts.network.PostApi
 import com.example.admin.mvvmposts.utils.BASE_URL
