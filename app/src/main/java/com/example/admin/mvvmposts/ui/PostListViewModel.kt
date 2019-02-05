@@ -2,6 +2,7 @@ package com.example.admin.mvvmposts.ui
 
 import android.arch.lifecycle.MutableLiveData
 import android.view.View
+import com.example.admin.mvvmposts.R
 import com.example.admin.mvvmposts.base.BaseViewModel
 import com.example.admin.mvvmposts.network.PostApi
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,6 +14,9 @@ class PostListViewModel : BaseViewModel() {
     @Inject
     lateinit var postApi: PostApi
     val loadingVisibility: MutableLiveData<Int> = MutableLiveData()
+    val errorMessage:MutableLiveData<Int> = MutableLiveData()
+    val errorClickListener = View.OnClickListener { loadPosts() }
+
 
 
     private lateinit var subscription: Disposable
@@ -36,6 +40,7 @@ class PostListViewModel : BaseViewModel() {
 
     private fun onRetrievePostListStart() {
         loadingVisibility.value = View.VISIBLE
+        errorMessage.value =  null
     }
 
     private fun onRetrievePostListFinish() {
@@ -47,6 +52,8 @@ class PostListViewModel : BaseViewModel() {
     }
 
     private fun onRetrievePostListError() {
+
+        errorMessage.value = R.string.post_error
 
     }
 

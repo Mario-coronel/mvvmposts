@@ -13,13 +13,13 @@ interface ViewModelInjector {
     fun inject(postListViewModel: PostListViewModel)
 
 
-    @Component.Builder
-    interface Builder {
-        fun build(): ViewModelInjector
-        fun networkModule(networkModule: Module): Builder
-
-
-    }
+//    @Component.Builder
+//    interface Builder {
+//        fun build(): ViewModelInjector
+//        fun networkModule(networkModule: Module): Builder
+//
+//
+//    }
 
 
 
