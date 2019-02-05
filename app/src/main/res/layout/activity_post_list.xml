@@ -6,9 +6,8 @@
                 name="viewModel"
                 type="com.example.admin.mvvmposts.ui.PostListViewModel"/>
     </data>
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_height="match_parent"
-
             android:layout_width="match_parent">
 
         <ProgressBar android:layout_width="wrap_content"
@@ -19,15 +18,16 @@
                      app:layout_constraintStart_toStartOf="parent"
                      app:layout_constraintEnd_toEndOf="parent"/>
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/post_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                app:adapter="@{viewModel.getPostListAdapter()}"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
